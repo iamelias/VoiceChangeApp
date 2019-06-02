@@ -27,9 +27,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func recordAudio(_ sender: AnyObject) {
         
-        recordingLabel.text = "Recording in Progress"
-        stopRecordingButton.isEnabled = true //when recording stop button is enabled
-        recordButton.isEnabled = false // when recording record button is disabled
+         configureRecUI(true) //record button disabled, stop button enabled, label text
         
         /*  Getting directory path by getting directory path name/.documentDirectory and storing it there as a string in dirPath constant. Then creating recording file name "recordedVoice.wav". Then combinging directory path and recording file name to get complete path to file.
         */
@@ -53,10 +51,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func stopRecording(_ sender: AnyObject) {
        
-        print("stop recording button was pressed")
-        recordButton.isEnabled = true //when stop recording is pressed record button is enabled
-        stopRecordingButton.isEnabled = false // when stop record is pressed stop button is disabled
-        recordingLabel.text = "Tap to Record"
+        configureRecUI(false) // stop button enabled, record button disabled, label text
         
         //Stopping the audio recorder, Setting shared audio session to inactive
         audioRecorder.stop()
@@ -83,6 +78,22 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let recordedAudioURL = sender as! URL
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
+    }
+    
+    func configureRecUI(_ isRecording: Bool) { //when recording/stop button is pressed
+        
+        if isRecording { // if recording button is pressed
+        recordButton.isEnabled = false // record button becomes disabled
+        stopRecordingButton.isEnabled = true // stop button becomes enabled
+        recordingLabel.text = "Recording in Progress" // compiler message confirms recording is happening
+        }
+        else { // if stop button is pressed
+            recordButton.isEnabled = true // record button becomes enabled
+            stopRecordingButton.isEnabled  = false // stop button becomes disabled
+            recordingLabel.text = "Tap to Record" // UI Label text
+            
+        }
+        
     }
   
     
