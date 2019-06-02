@@ -21,15 +21,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stopRecordingButton.isEnabled = false
+        stopRecordingButton.isEnabled = false //stopRecording button is intially disabled
 
     }
     
     @IBAction func recordAudio(_ sender: AnyObject) {
         
         recordingLabel.text = "Recording in Progress"
-        stopRecordingButton.isEnabled = true
-        recordButton.isEnabled = false
+        stopRecordingButton.isEnabled = true //when recording stop button is enabled
+        recordButton.isEnabled = false // when recording record button is disabled
         
         /*  Getting directory path by getting directory path name/.documentDirectory and storing it there as a string in dirPath constant. Then creating recording file name "recordedVoice.wav". Then combinging directory path and recording file name to get complete path to file.
         */
@@ -54,8 +54,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBAction func stopRecording(_ sender: AnyObject) {
        
         print("stop recording button was pressed")
-        recordButton.isEnabled = true
-        stopRecordingButton.isEnabled = false
+        recordButton.isEnabled = true //when stop recording is pressed record button is enabled
+        stopRecordingButton.isEnabled = false // when stop record is pressed stop button is disabled
         recordingLabel.text = "Tap to Record"
         
         //Stopping the audio recorder, Setting shared audio session to inactive
@@ -65,12 +65,27 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
     }
     
+    // MARK: Audio Recorder Delegate
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         
-        print("Finished Recording")
+        if flag {
+            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
+        }
+        else {
+            print("recording was not successful")
+        }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "stopRecording" {
+            let playSoundsVC = segue.destination as! PlaySoundsViewController
+            let recordedAudioURL = sender as! URL
+            playSoundsVC.recordedAudioURL = recordedAudioURL
+        }
     }
   
     
 }
+
 
