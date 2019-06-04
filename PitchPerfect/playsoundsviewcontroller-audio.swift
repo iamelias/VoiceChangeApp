@@ -36,7 +36,8 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             audioFile = try AVAudioFile(forReading: recordedAudioURL as URL) //loading audio file
         } catch {
             showAlert(Alerts.AudioFileError, message: String(describing: error)) //alert if load fails
-        }        
+        }
+        
     }
     
     func playSound(rate: Float? = nil, pitch: Float? = nil, echo: Bool = false, reverb: Bool = false) {

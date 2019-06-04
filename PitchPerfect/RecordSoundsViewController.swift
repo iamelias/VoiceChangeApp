@@ -21,7 +21,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stopRecordingButton.isEnabled = false //stopRecording button is intially disabled
+        configureRecUI(false) //stopRecording button is intially disabled
 
     }
     
@@ -33,12 +33,19 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         */
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
+       // var fileName: String = "audioFile.m4a"
         let pathArray = [dirPath, recordingName]
         let filePath = URL(string: pathArray.joined(separator: "/"))
-       
+        
+    
         //creating the audio session. audio session is needed to record/playback audio
         let session = AVAudioSession.sharedInstance()
-        try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+       // try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
+        do {
+            try session.setCategory(AVAudioSession.Category.playback)
+        } catch {
+            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+        }
         
         //Creating AVAudioRecorder and start recording
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])//creating AVAudioRecorder
@@ -48,6 +55,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.record()
         
     }
+ 
     
     @IBAction func stopRecording(_ sender: AnyObject) {
        
@@ -61,6 +69,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     // MARK: Audio Recorder Delegate
+    //Calling stop recording segue
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         
         if flag {
@@ -72,12 +81,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        override  func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "stopRecording" {
             let playSoundsVC = segue.destination as! PlaySoundsViewController
             let recordedAudioURL = sender as! URL
             playSoundsVC.recordedAudioURL = recordedAudioURL
+            print(recordedAudioURL)
         }
+    
     }
     
     func configureRecUI(_ isRecording: Bool) { //when recording/stop button is pressed
@@ -98,5 +109,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
   
     
 }
+
 
 
