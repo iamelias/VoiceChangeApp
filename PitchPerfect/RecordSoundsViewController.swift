@@ -41,7 +41,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         do {
             try session.setCategory(AVAudioSession.Category.playback)
         } catch {
-            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+            print("creating the audio session failed")
         }
         
         try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:]) //creating audio recorder
