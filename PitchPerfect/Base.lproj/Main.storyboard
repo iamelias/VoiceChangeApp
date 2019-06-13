@@ -19,20 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-Sz-df0">
-                                <rect key="frame" x="256" y="108" width="155" height="159"/>
+                                <rect key="frame" x="256" y="57" width="155" height="155"/>
                                 <state key="normal" image="RecordButton"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EPa-3h-AZV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgB-7x-6Tr">
-                                <rect key="frame" x="280" y="275" width="107" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqb-md-sa3">
-                                <rect key="frame" x="301.5" y="303.5" width="64" height="64"/>
+                                <rect key="frame" x="301.5" y="267.5" width="64" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="9aa-du-zkN"/>
                                     <constraint firstAttribute="width" constant="64" id="fvm-eL-1YN"/>
@@ -44,28 +38,23 @@
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wAw-Ka-2rb"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgB-7x-6Tr">
+                                <rect key="frame" x="280" y="229" width="107" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Zqb-md-sa3" secondAttribute="bottom" constant="7.5" id="9AV-3h-iZB"/>
-                            <constraint firstItem="Zqb-md-sa3" firstAttribute="top" secondItem="CgB-7x-6Tr" secondAttribute="bottom" constant="8" id="CnZ-4M-BBE"/>
+                            <constraint firstItem="Zqb-md-sa3" firstAttribute="top" secondItem="CgB-7x-6Tr" secondAttribute="bottom" constant="18" id="CnZ-4M-BBE"/>
                             <constraint firstItem="vLd-Sz-df0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HfW-8H-Ygr"/>
                             <constraint firstItem="Zqb-md-sa3" firstAttribute="centerX" secondItem="CgB-7x-6Tr" secondAttribute="centerX" id="JwN-1t-Wm3"/>
-                            <constraint firstItem="CgB-7x-6Tr" firstAttribute="top" secondItem="vLd-Sz-df0" secondAttribute="bottom" constant="8" id="Nxr-mi-bQZ"/>
+                            <constraint firstItem="CgB-7x-6Tr" firstAttribute="top" secondItem="vLd-Sz-df0" secondAttribute="bottom" constant="17" id="Nxr-mi-bQZ"/>
                             <constraint firstItem="CgB-7x-6Tr" firstAttribute="centerX" secondItem="vLd-Sz-df0" secondAttribute="centerX" id="YMy-TR-v6j"/>
-                            <constraint firstItem="vLd-Sz-df0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gdy-M9-J42"/>
+                            <constraint firstItem="vLd-Sz-df0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-53" id="gdy-M9-J42"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="9AV-3h-iZB"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <include reference="9AV-3h-iZB"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ga4-Ig-1Pc"/>
                     <connections>
