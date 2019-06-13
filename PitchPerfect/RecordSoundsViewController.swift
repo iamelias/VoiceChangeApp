@@ -19,6 +19,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         configureRecUI(false) //setting stopRecording button to being intially disabled
@@ -83,25 +84,19 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     
     }
-    
-    func configureRecUI(_ isRecording: Bool) { //when recording/stop button is pressed
-        
-        if isRecording { // if recording button is pressed...
-        recordButton.isEnabled = false // record button becomes disabled...
-        stopRecordingButton.isEnabled = true // stop button becomes enabled...
-        recordingLabel.text = "Recording in Progress" // compiler message confirms recording is happening
-        }
-        else { // if stop button is pressed...
-            recordButton.isEnabled = true // record button becomes enabled...
-            stopRecordingButton.isEnabled  = false // stop button becomes disabled...
-            recordingLabel.text = "Tap to Record" // UI Label text
+    //Enabling/disabling buttons, and choosing label in RecordingSoundsViewController
+         func configureRecUI(_ isRecording: Bool) { //recording/not recording
+            recordButton.isEnabled = !isRecording // record Button is disabled/Record Button enabled
+         stopRecordingButton.isEnabled = isRecording // stop button enabled/stop button disabled
+            let output = isRecording ? "Recording in Progress" : "Tap to Record" // record output/stop output
+            recordingLabel.text = output // displaying record button output/stop button output
             
-        }
-        
+         }
+    
     }
   
     
-}
+
 
 
 
