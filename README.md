@@ -1,5 +1,6 @@
 VoiceChangeApp, iOS Developer: Elias Hall
-File Name: PitchPerfect
+
+File name: PitchPerfect
 
 Overview: The VoiceChaneApp records users voice and plays it back with user chosen sound effect. App uses AVAudioRecorder from AVFoundation
 
