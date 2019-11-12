@@ -1,4 +1,4 @@
-VoiceChangeApp, iOS Developer: Elias Hall
+**VoiceChangeApp, iOS Developer: Elias Hall**
 
 File name: PitchPerfect
 
@@ -8,4 +8,4 @@ RecordSoundsViewController: This view controller contains 2 buttons. A recording
 
 PlaySoundsViewController: This view controller contains 6 buttons each with its own sound effect. User taps the button to hear their recorded voice played back with button's sound effect. The playback options are: fast, slow, chipmunk, Darth Vader, echo, and reverb. Stop button force-stops the playback. The user can select back in nav bar to return to the recording screen where they can repeat record-playback process.
 
-PlaySoundsViewController Audio Extention *Not Written by me* : Configures UI to be able to playback audio with AVAudioEngine
+PlaySoundsViewController Audio Extention(Not Written by me): Configures UI to be able to playback audio with AVAudioEngine
