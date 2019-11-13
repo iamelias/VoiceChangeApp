@@ -1,4 +1,4 @@
-# **VoiceChangeApp, iOS Developer: Elias Hall**
+# **VoiceChangeApp, iOS Developer: Elias H.**
 
 **Overview:** The VoiceChaneApp records the user's voice and plays it back, with a user chosen sound effect. App uses AVAudioRecorder from AVFoundation. Recreated PitchPerfect
 
