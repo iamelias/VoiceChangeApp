@@ -21,6 +21,6 @@ Xcode 10.3, Swift 4.2, UIKit, AVFoundation
 
 **Select below for larger clearer images**
 <p float="left">
-<img src = "Tourist/Images/ScreenShot1.png" width="100" height="200">
-<img src = "Tourist/Images/ScreenShot2.png" width="100" height="200">
+<img src = "Images/ScreenShot1.png" width="100" height="200">
+<img src = "Images/ScreenShot2.png" width="100" height="200">
 </p>
