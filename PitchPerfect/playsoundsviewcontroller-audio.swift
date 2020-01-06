@@ -150,7 +150,7 @@ extension PlaySoundsViewController: AVAudioPlayerDelegate {
             stopButton.isEnabled = false
         }
     }
-    
+
     func setPlayButtonsEnabled(_ enabled: Bool) {
         snailButton.isEnabled = enabled
         chipmunkButton.isEnabled = enabled

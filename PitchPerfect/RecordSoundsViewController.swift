@@ -19,9 +19,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.isHidden = true
         configureRecUI(false) //setting stopRecording button to being intially disabled
 
     }
