@@ -17,7 +17,7 @@ This view controller contains 6 buttons each with its own sound effect. User tap
 Configures UI to be able to playback audio with AVAudioEngine
 
 **Tools used:**
-Xcode 10.3, Swift 4.2, UIKit, AVFoundation
+**Xcode 10.3, Swift 4.2, UIKit, AVFoundation**
 
 **Select below for larger clearer images**
 <p float="left">
