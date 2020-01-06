@@ -8,7 +8,6 @@ The VoiceChaneApp records the user's voice and plays it back, with a user-chosen
 
 
 **Walkthrough:**
-
 **RecordSoundsViewController:** This view controller contains 2 buttons. A recording button and a finished recording button. User taps on the record button, speaks, then taps on the stop recording button. The user is then automatically segued to the PlaySoundsViewController. 
 
 **PlaySoundsViewController:** 
