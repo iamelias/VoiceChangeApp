@@ -1,7 +1,7 @@
 # **VoiceChangeApp, iOS Developer: Elias H.**
 
 **Run instructions:** 
-Xcode 10.3/11.3, iPhone XS/11 Pro simulator, 
+Xcode 10.3/11.3, iOS Deployment Target: 11.4, iPhone XS/11 Pro simulator, 
 
 **Overview:** 
 The VoiceChaneApp records the user's voice and plays it back, with a user-chosen sound effect. App uses AVAudioRecorder from AVFoundation. This is recreation of an app called PitchPerfect, with my own developed code.
